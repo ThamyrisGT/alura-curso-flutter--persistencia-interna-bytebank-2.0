@@ -52,7 +52,7 @@ class _ContactsFormState extends State<ContactsForm> {
                   onPressed: () {
                     final String name = _nameController.text;
                     final int accountNumber = int.parse(_accontNumberController.text);
-                    final Contact newContact = Contact(name,accountNumber);
+                    final Contact newContact = Contact(0,name,accountNumber);
                     Navigator.pop(context,newContact);
                   },
                   child: Text(

@@ -3,8 +3,14 @@ import 'package:bytebank_2/screens/contacts_list.dart';
 import 'package:bytebank_2/screens/dashboard.dart';
 import 'package:flutter/material.dart';
 
+import 'database/app_database.dart';
+import 'model/contact.dart';
+
 void main() {
   runApp(BytebankApp());
+  save(Contact(0, 'Reis', 1000)).then((id) {
+    findAll().then((contacts) => debugPrint(contacts.toString()));
+  });
 }
 
 class BytebankApp extends StatelessWidget {
